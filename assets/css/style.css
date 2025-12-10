@@ -1,0 +1,15 @@
+body {
+    background-color: #f4f6f9;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+.btn {
+    padding: 10px;
+}
