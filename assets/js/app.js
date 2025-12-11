@@ -1,6 +1,6 @@
-// ----------------------------
-// Inicialización de valores
-// ----------------------------
+
+// Iniciar valores    
+//__________________________
 if (!localStorage.getItem("saldo")) {
     localStorage.setItem("saldo", "0");
 }
@@ -13,23 +13,23 @@ if (!localStorage.getItem("contactos")) {
     localStorage.setItem("contactos", JSON.stringify([]));
 }
 
-// ----------------------------
+
 // Función: obtener saldo
-// ----------------------------
+//_______________________
 function getSaldo() {
     return Number(localStorage.getItem("saldo"));
 }
 
-// ----------------------------
-// Función: actualizar saldo
-// ----------------------------
+
+// Función actualizar saldo
+// _________________________
 function setSaldo(nuevoSaldo) {
     localStorage.setItem("saldo", nuevoSaldo);
 }
 
-// ----------------------------
-// Función: registrar movimiento
-// ----------------------------
+
+// Función registrar movimiento
+// _____________________________
 function agregarMovimiento(tipo, monto, detalle = "") {
     let movimientos = JSON.parse(localStorage.getItem("movimientos"));
 
@@ -43,9 +43,9 @@ function agregarMovimiento(tipo, monto, detalle = "") {
     localStorage.setItem("movimientos", JSON.stringify(movimientos));
 }
 
-// ----------------------------
-// Función: agregar contacto
-// ----------------------------
+
+// Función agregar contacto
+//___________________________
 function agregarContacto(nombre, email) {
     let contactos = JSON.parse(localStorage.getItem("contactos"));
 
@@ -53,17 +53,17 @@ function agregarContacto(nombre, email) {
     localStorage.setItem("contactos", JSON.stringify(contactos));
 }
 
-// ----------------------------
-// Función: buscar contacto
-// ----------------------------
+
+// Función buscar contacto
+//__________________________
 function buscarContactos(filtro) {
     let contactos = JSON.parse(localStorage.getItem("contactos"));
     return contactos.filter(c => c.nombre.toLowerCase().includes(filtro.toLowerCase()));
 }
 
-// ----------------------------
+
 // DEPÓSITO
-// ----------------------------
+// _____________________________
 function depositar() {
     let monto = Number(document.getElementById("montoDeposito").value);
 
@@ -81,9 +81,9 @@ function depositar() {
     window.location.href = "menu.html";
 }
 
-// ----------------------------
+
 // ENVÍO DE DINERO
-// ----------------------------
+// _______________________-
 function enviar() {
     let destino = document.getElementById("busqueda").value;
     let monto = Number(document.getElementById("montoEnviar").value);
@@ -106,9 +106,9 @@ function enviar() {
     alert("Dinero enviado correctamente");
     window.location.href = "menu.html";
 }
-// ----------------------------
+
 //MOSTRAR MOVIMIENTOS
-// ----------------------------
+//___________________________
 function cargarMovimientos() {
     let movs = JSON.parse(localStorage.getItem("movimientos")) || [];
 
